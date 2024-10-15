@@ -1,0 +1,5 @@
+.env
+vendor
+log.txt
+lastmessage.txt
+securitycam*.json
