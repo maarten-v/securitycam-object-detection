@@ -4,6 +4,7 @@
         "google/cloud-vision": "^1.10",
         "illuminate/support": "^10.48",
         "spatie/ray": "^1.41",
-        "illuminate/collections": "^10.48"
+        "illuminate/collections": "^10.48",
+        "ext-curl": "*"
     }
 }
