@@ -106,6 +106,7 @@ class VisionApiProcessor
     private function logAndOutputResults(array $filteredObjects): void
     {
         $items = PHP_EOL . date('Y-m-d H:i:s') . PHP_EOL;
+        /** @var LocalizedObjectAnnotation $object */
         foreach ($filteredObjects as $object) {
             $items .= $object->getName() . ' ' . round($object->getScore() * 100) . '%' . PHP_EOL;
         }
@@ -128,7 +129,7 @@ class VisionApiProcessor
 
     private function formatObjectsMessage(array $filteredObjects): string
     {
-        return implode(', ', array_map(function ($obj) {
+        return implode(', ', array_map(static function ($obj) {
             return $obj->getName() . ' (' . round($obj->getScore() * 100) . '%)';
         }, $filteredObjects));
     }
